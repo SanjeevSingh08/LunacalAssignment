@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.tab::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-image: linear-gradient(
+        to right,
+        rgba(36, 36, 41, 0.2)  ,
+        rgba(55, 56, 61, 0.4) 
+      );
+    border-radius: inherit;
+    transition: width 0.5s ease;
+    z-index: 9;
+  }
+  
+ .tab:hover::before {
+    width: 100%;
+  }
+  
+  .carousel-image {
+filter: grayscale(1);
+    border-radius: 24px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    transform-origin: bottom right; /* Pivot the rotation from the bottom-right corner */
+  }
+
+  .carousel-image:hover {
+    transform: scale(1.15) rotate(-1.5deg) translateX(10px); /* Scale up, rotate, and move right */
+    box-shadow: 2px 8px 16px rgba(0, 0, 0, 0.3);
+    filter: grayscale(0); 
+  }
+  
